@@ -147,7 +147,7 @@ func SendSESEmail(message string, unsubscribe_url string) {
 			"<p>Hi %v,</p>"+
 			"<p>The Book %v, %v owned by %v on 6225csyekeyuliuliukeyu.me has been created.</p>"+
 			"<p>See more details: </p>"+
-			"<p><a href='http://prod.6225csyekeyuliu.me/v1/books/%v'>This Book/a></p>"+
+			"<p><a href='http://prod.6225csyekeyuliu.me/v1/books/%v'>This Book</a></p>"+
 			"<p><a href='http://prod.6225csyekeyuliu.me/v1/mybooks'>Books under your name</a></p>"+
 			"<p>This email was sent from prod.6225csyekeyuliuliukeyu.me</a> with <a href='https://aws.amazon.com/ses/'>Amazon SES</a>.</p>"+
 			"<p><a href='%v'>Unsubscribe</a></p>",

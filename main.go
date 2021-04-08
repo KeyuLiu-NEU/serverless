@@ -142,33 +142,37 @@ func SendSESEmail(message string, unsubscribe_url string) {
 	TextBody := "This email was sent from prod.6225csyekeyuliu.me with Amazon SES."
 
 	if email_context[0] == "Create Book" {
-		Subject = fmt.Sprintf("Your book '%v' on 6225csyekeyuliuliukeyu.me has been created", email_context[2])
+		Subject = fmt.Sprintf("Your book '%v' on 6225csyekeyuliu.me has been created", email_context[2])
 		HtmlBody = fmt.Sprintf("<h1>Notification from 6225csyekeyuliu.me</h1>"+
 			"<p>Hi %v,</p>"+
-			"<p>The Book %v owned by %v on 6225csyekeyuliuliukeyu.me has been created.</p>"+
+			"<p>The Book %v, %v owned by %v on 6225csyekeyuliuliukeyu.me has been created.</p>"+
 			"<p>See more details: </p>"+
+			"<p>http://prod.6225csyekeyuliu.me/v1/books/%v </p>"
+			"<p><a href='http://prod.6225csyekeyuliu.me/v1/mybooks'>Books under your name</a></p>"
 			"<p>This email was sent from prod.6225csyekeyuliuliukeyu.me</a> with <a href='https://aws.amazon.com/ses/'>Amazon SES</a>.</p>"+
 			"<p><a href='%v'>Unsubscribe</a></p>",
-			email_context[3], email_context[2], email_context[4], unsubscribe_url)
+			email_context[3], email_context[1], email_context[2], email_context[4], email_context[1], unsubscribe_url)
 		TextBody = fmt.Sprintf("Hi %v,\n"+
-		"<p>The Book %v owned by %v on 6225csyekeyuliuliukeyu.me has been created.</p>"+
+		"<p>The Book %v , %v owned by %v on 6225csyekeyuliuliukeyu.me has been created.</p>"+
 		"<p>See more details: </p>"+
+		"<p>http://prod.6225csyekeyuliu.me/v1/books/%v </p>"
+		"<p><a href='http://prod.6225csyekeyuliu.me/v1/mybooks'>Books under your name</a></p>"
 		"<p>This email was sent from prod.6225csyekeyuliuliukeyu.me</a> with <a href='https://aws.amazon.com/ses/'>Amazon SES</a>.</p>"+
 		"<p><a href='%v'>Unsubscribe</a></p>",
-		email_context[3], email_context[2], email_context[4], unsubscribe_url)
+		email_context[3], email_context[1], email_context[2], email_context[4], email_context[1], unsubscribe_url)
 	} else if email_context[0] == "Delete Book" {
 		Subject = fmt.Sprintf("The Book '%v' of '%v' on 6225csyekeyuliu.me has been deleted", email_context[1], email_context[2])
 		HtmlBody = fmt.Sprintf("<h1>Notification from 6225csyekeyuliu.me</h1>"+
 			"<p>Hi %v,</p>"+
-			"<p>The Book %v owned by %v on 6225csyekeyuliu.me has been deleted.</p>"+
+			"<p>The Book %v, %v owned by %v on 6225csyekeyuliu.me has been deleted.</p>"+
 			"<p>This email was sent from 6225csyekeyuliu.me with <a href='https://aws.amazon.com/ses/'>Amazon SES</a>.</p>"+
 			"<p><a href='%v'>Unsubscribe</a></p>",
-			email_context[3], email_context[2], email_context[4], unsubscribe_url)
+			email_context[3], email_context[1], email_context[2], email_context[4], unsubscribe_url)
 		TextBody = fmt.Sprintf("Hi %v,\n"+
-			"The Book %v owned by %v on 6225csyekeyuliu.me has been deleted.\n"+
+			"The Book %v, %v owned by %v on 6225csyekeyuliu.me has been deleted.\n"+
 			"This email was sent from 6225csyekeyuliu.me with Amazon SES.\n"+
 			"Unsubscribe: %v.",
-			email_context[3], email_context[2], email_context[4], unsubscribe_url)
+			email_context[3], email_context[1], email_context[2], email_context[4], unsubscribe_url)
 	} else {
 		log.Println("The message is not started as expected")
 	}

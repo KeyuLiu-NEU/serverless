@@ -253,7 +253,7 @@ func searchItemInDynamoDB(TextBody string) bool {
 
 	svc_db := initDBClient()
 
-	tableName := "6225csye"
+	tableName := "csye6225"
 
 	result, err := svc_db.GetItem(&dynamodb.GetItemInput{
 		TableName: aws.String(tableName),

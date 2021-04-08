@@ -155,7 +155,7 @@ func SendSESEmail(message string, unsubscribe_url string) {
 		"<p>See more details: </p>"+
 		"<p>This email was sent from prod.6225csyekeyuliuliukeyu.me</a> with <a href='https://aws.amazon.com/ses/'>Amazon SES</a>.</p>"+
 		"<p><a href='%v'>Unsubscribe</a></p>",
-		email_context[3], email_context[2], email_context[4], unsubscribe_url), unsubscribe_url)
+		email_context[3], email_context[2], email_context[4], unsubscribe_url)
 	} else if email_context[0] == "Delete Book" {
 		Subject = fmt.Sprintf("The Book '%v' of '%v' on 6225csyekeyuliu.me has been deleted", email_context[1], email_context[2])
 		HtmlBody = fmt.Sprintf("<h1>Notification from 6225csyekeyuliu.me</h1>"+

@@ -155,7 +155,8 @@ func SendSESEmail(message string, unsubscribe_url string) {
 		TextBody = fmt.Sprintf("Hi %v,\n"+
 		"The Book %v , %v owned by %v on 6225csyekeyuliuliukeyu.me has been created.\n"+
 		"See more details: \n"+
-		"prod.6225csyekeyuliu.me/v1/books/%v \n"
+		"prod.6225csyekeyuliu.me/v1/books/"
+		"%v\n"
 		"<a href='http://prod.6225csyekeyuliu.me/v1/mybooks'>Books under your name \n"
 		"This email was sent from prod.6225csyekeyuliuliukeyu.me with Amazon SES\n"+
 		"Unsubscribe: %v."

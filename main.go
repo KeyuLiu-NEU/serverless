@@ -147,7 +147,7 @@ func SendSESEmail(message string, unsubscribe_url string) {
 			"<p>Hi %v,</p>"+
 			"<p>The Book %v, %v owned by %v on 6225csyekeyuliuliukeyu.me has been created.</p>"+
 			"<p>See more details: </p>"+
-			"<p>prod.6225csyekeyuliu.me/v1/books/%v</p>"+
+			"<p><a href='http://prod.6225csyekeyuliu.me/v1/books/%v'>This Book/a></p>"+
 			"<p><a href='http://prod.6225csyekeyuliu.me/v1/mybooks'>Books under your name</a></p>"+
 			"<p>This email was sent from prod.6225csyekeyuliuliukeyu.me</a> with <a href='https://aws.amazon.com/ses/'>Amazon SES</a>.</p>"+
 			"<p><a href='%v'>Unsubscribe</a></p>",
@@ -155,8 +155,7 @@ func SendSESEmail(message string, unsubscribe_url string) {
 		TextBody = fmt.Sprintf("Hi %v,\n"+
 		"The Book %v , %v owned by %v on 6225csyekeyuliuliukeyu.me has been created.\n"+
 		"See more details: \n"+
-		"prod.6225csyekeyuliu.me/v1/books/"+
-		"%v\n"+
+		"http://prod.6225csyekeyuliu.me/v1/books/%v This Book \n"+
 		"http://prod.6225csyekeyuliu.me/v1/mybooks Books under your name \n"+
 		"This email was sent from prod.6225csyekeyuliuliukeyu.me with Amazon SES. \n"+
 		"Unsubscribe: %v.",

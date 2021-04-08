@@ -179,13 +179,13 @@ func SendSESEmail(message string, unsubscribe_url string) {
 	}
 
 	//search for email, if already sent, return, otherwise, put in DynamoDB table, and send email
-	isExist := searchItemInDynamoDB(TextBody)
+	isExist := searchItemInDynamoDB(email_context[2])
 	if isExist {
 		log.Println("The email has already been sent")
 		return
 	}
 
-	if err := addItemToDynamoDB(TextBody); err != nil {
+	if err := addItemToDynamoDB(email_context[2]); err != nil {
 		log.Printf("Failed to put email item into DynamoDB table: %v", err)
 		return
 	}

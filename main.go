@@ -135,7 +135,7 @@ func SendSESEmail(message string, unsubscribe_url string) {
 	}
 
 	//prepare information before assemble the email
-	Recipient := liu.keyuneu@gmail.com
+	Recipient := "liu.keyuneu@gmail.com"
 
 	Subject := "Notification from 6225csyekeyuliu"
 	HtmlBody := "<h1>Notification from 6225csyekeyuliu</h1><p>This email was sent with <a href='https://aws.amazon.com/ses/'>Amazon SES</a> using the <a href='https://aws.amazon.com/sdk-for-go/'>AWS SDK for Go</a>.</p>"
